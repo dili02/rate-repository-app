@@ -8,3 +8,13 @@ Build native Android and iOS mobile applications with JavaScript and React using
 * Exercise 10.1: initializing the application.
 * Exercise 10.2: setting up the ESLint.
 
+**b** - React Native Basics.
+* Exercise 10.3: the reviewed repositories list.
+* Exercise 10.4: the app bar.
+* Exercise 10.5: polished reviewed repositories list.
+* Exercise 10.6: the sign in view.
+* Exercise 10.7: scrollable app bar.
+* Exercise 10.8: the sign in form.
+* Exercise 10.9: validating the sign in form.
+* Exercise 10.10: a platform specific font.
+
