@@ -18,3 +18,13 @@ Build native Android and iOS mobile applications with JavaScript and React using
 * Exercise 10.9: validating the sign in form.
 * Exercise 10.10: a platform specific font.
 
+**c** - Communicating with server
+* Exercise 10.11: fetching repositories with Apollo Client.
+* Exercise 10.12: environment variables.
+* Exercise 10.13: the sign in form mutation.
+* Exercise 10.14: storing the access token step1.
+* Exercise 10.15: storing the access token step2.
+* Exercise 10.16: sign out.
+
+
+

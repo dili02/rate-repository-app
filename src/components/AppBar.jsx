@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import { Link, useLocation } from "react-router-native";
+import useAuthorizedUser from "../hooks/useAuthorizedUser";
 import Text from "./Text";
 import theme from "../theme";
 
@@ -39,11 +40,16 @@ const AppBarTab = ({ children, to }) => {
 };
 
 const AppBar = () => {
+  const { isAuthorized } = useAuthorizedUser();
+
   return (
     <View style={styles.container}>
       <ScrollView horizontal>
         <AppBarTab to="/">Repositories</AppBarTab>
-        <AppBarTab to="/signin">SignIn</AppBarTab>
+        {isAuthorized
+          ? <AppBarTab to="/signout">SignOut</AppBarTab>
+          : <AppBarTab to="/signin">SignIn</AppBarTab>
+        }
       </ScrollView>
     </View>
   );
