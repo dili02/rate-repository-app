@@ -5,20 +5,6 @@ import useAuthorizedUser from "../hooks/useAuthorizedUser";
 import Text from "./Text";
 import theme from "../theme";
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-    backgroundColor: theme.colors.appBarTab,
-    flexDirection: "row",
-  },
-  appBar: {
-    paddingHorizontal: 10,
-  },
-  active: {
-    color: theme.colors.white,
-  },
-});
-
 const AppBarTab = ({ children, to }) => {
   const { pathname } = useLocation();
   const active = pathname === to;
@@ -46,13 +32,40 @@ const AppBar = () => {
     <View style={styles.container}>
       <ScrollView horizontal>
         <AppBarTab to="/">Repositories</AppBarTab>
-        {isAuthorized
-          ? <AppBarTab to="/signout">SignOut</AppBarTab>
-          : <AppBarTab to="/signin">SignIn</AppBarTab>
-        }
+        {isAuthorized ? (
+          <View style={styles.tabContainer}>
+            <AppBarTab to="/create-review">Create a review</AppBarTab>
+            <AppBarTab to="/my-reviews">My reviews</AppBarTab>
+            <AppBarTab to="/signout">SignOut</AppBarTab>
+          </View>
+        ) : (
+          <View style={styles.tabContainer}>
+            <AppBarTab to="/signin">SignIn</AppBarTab>
+            <AppBarTab to="/signup">SignUp</AppBarTab>
+          </View>
+        )}
       </ScrollView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    backgroundColor: theme.colors.textPrimary,
+    flexDirection: "row",
+  },
+  appBar: {
+    paddingHorizontal: 10,
+  },
+  active: {
+    color: theme.colors.white,
+  },
+  tabContainer: {
+    display: "flex",
+    flexDirection: "row",
+  },
+});
 
 export default AppBar;

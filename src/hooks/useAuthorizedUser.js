@@ -4,13 +4,13 @@ import { AUTHORIZED_USER } from "../graphql/queries";
 const useAuthorizedUser = () => {
   const { data } = useQuery(AUTHORIZED_USER, {
     fetchPolicy: "cache-and-network",
+    variables: { includeReviews: false },
   });
 
-  const isAuthorized =
-    data?.authorizedUser !== null && data !== undefined;
+  const isAuthorized = data?.authorizedUser !== null && data !== undefined;
 
   return {
-    isAuthorized
+    isAuthorized,
   };
 };
 

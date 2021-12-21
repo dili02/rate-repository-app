@@ -1,5 +1,6 @@
 import React from "react";
 import { Text as NativeText, StyleSheet } from "react-native";
+
 import theme from "../theme";
 
 const styles = StyleSheet.create({
@@ -8,16 +9,12 @@ const styles = StyleSheet.create({
     fontSize: theme.fontSizes.body,
     fontFamily: theme.fonts.main,
     fontWeight: theme.fontWeights.normal,
-    padding: 2
   },
   colorTextSecondary: {
     color: theme.colors.textSecondary,
   },
   colorPrimary: {
     color: theme.colors.primary,
-  },
-  colorWhite: {
-    color: theme.colors.white,
   },
   fontSizeSubheading: {
     fontSize: theme.fontSizes.subheading,
@@ -32,7 +29,6 @@ const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
     styles.text,
     color === "textSecondary" && styles.colorTextSecondary,
     color === "primary" && styles.colorPrimary,
-    color === "white" && styles.colorWhite,
     fontSize === "subheading" && styles.fontSizeSubheading,
     fontWeight === "bold" && styles.fontWeightBold,
     style,
